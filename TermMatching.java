@@ -1,33 +1,24 @@
-import java.util.Scanner;
 import java.util.Stack;
 
-public class Minifier {
-    public static void main(String[] args) {
-        TermMatching b = new TermMatching();
-        String css = "p.center {\ntext-align: center;\ncolor: red;\n}";
-        System.out.println(b.Check(css));
-    }
-}
-
-class TermMatching {
+public class TermMatching {
     public String input;
 
     public TermMatching(String input) {
         this.input = input;
     }
-    public TermMatching(){
+
+    public TermMatching() {
         this("");
     }
-    
+
     public boolean Check(String code) {
         input = code;
         Stack<String> stack = new Stack<>();
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
-            if (c == ':' || (!stack.contains("\"") && c == '"')|| (!stack.contains("'") && c == '\'')) {
+            if (c == ':' || (!stack.contains("\"") && c == '"') || (!stack.contains("'") && c == '\'')) {
                 stack.push("" + c);
-            }
-            else if (c == ';' || c == '"' || c == '\'') {
+            } else if (c == ';' || c == '"' || c == '\'') {
                 if (stack.isEmpty())
                     return false;
                 switch (stack.pop()) {
@@ -53,7 +44,7 @@ class TermMatching {
         if (stack.isEmpty()) {
             return true;
         }
-        
+
         return false;
     }
 }
