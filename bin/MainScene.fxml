@@ -104,6 +104,7 @@
             </HBox>
             <Button layoutX="582.0" layoutY="334.0" mnemonicParsing="false" onAction="#btnCopyClicked" prefHeight="26.0" prefWidth="85.0" text="Copy" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="14.0" />
             <Button layoutX="441.0" layoutY="333.0" mnemonicParsing="false" onAction="#btnOpenClicked" prefHeight="26.0" prefWidth="85.0" text="Open" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="113.39999999999998" />
+            <Button layoutX="341.0" layoutY="333.0" mnemonicParsing="false" onAction="#btnMinifyClicked" prefHeight="26.0" prefWidth="85.0" text="Minify" />
       </children>
     </AnchorPane>
   </children>
