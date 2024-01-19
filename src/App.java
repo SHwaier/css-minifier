@@ -11,15 +11,21 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
+    private static Stage primaryStage;
+
+    public static Stage GetPrimaryStage() {
+        return primaryStage;
+    }
+
     @Override
-    public void start(Stage primaryStage) {
-        
+    public void start(Stage myStage) {
+        primaryStage = myStage;
 
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
             Scene scene = new Scene(root);
-            
+
             primaryStage.setTitle("CSS Minifier");
             primaryStage.setScene(scene);
             primaryStage.show();
