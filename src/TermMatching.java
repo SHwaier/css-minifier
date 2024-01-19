@@ -45,6 +45,7 @@ public class TermMatching {
         }
         // Success, base case
         if (stack.isEmpty()) {
+            input = "";
             return true;
         }
 

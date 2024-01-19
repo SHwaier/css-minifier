@@ -48,6 +48,11 @@ public class MainSceneController {
 
     }
 
+    @FXML
+    void btnMinifyClicked(ActionEvent event) {
+        OutputText.setText(Minifier.Minify(OriginalText.getText()));
+    }
+
     private String ChooseFile(Stage p) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
