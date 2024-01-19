@@ -1,4 +1,3 @@
-import java.util.Stack;
 
 public class Minifier {
 
@@ -16,15 +15,16 @@ public class Minifier {
                 if (c == ';' || c == ':' || c == '"' || c == '\'') {
                     tm.input += c;
                     IsBalanced = tm.Check(tm.input);
+                    MinifiedInput += c;
                     continue;
                 }
                 if (IsBalanced) {
                     if (c == ' ' || c == '\n' || c == '\t') {
                         continue;
                     }
-                    MinifiedInput += c;
                 }
-
+                MinifiedInput += c;
+                
             }
 
         } while (input.contains("\n") || !input.isEmpty());
